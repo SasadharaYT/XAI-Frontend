@@ -1,4 +1,5 @@
 import { ShieldCheck, Eye, Cpu, ArrowRight, Zap } from 'lucide-react';
+import PipelineAnimation from '../components/PipelineAnimation';
 
 export default function LandingPage() {
   return (
@@ -37,29 +38,37 @@ export default function LandingPage() {
       </header>
 
       {/* Hero */}
-      <section className="flex flex-col items-center justify-center flex-grow px-6 py-24 text-center">
-        <span className="inline-block border border-indigo-200 text-indigo-600 text-xs font-semibold px-3 py-1 rounded mb-6 tracking-widest uppercase">
-          Open Standard &middot; v1.0
-        </span>
-        <h1 className="text-4xl md:text-5xl font-bold mb-5 max-w-3xl leading-tight">
-          Governance and explainability<br className="hidden md:block" /> for production AI agents
-        </h1>
-        <p className="text-base md:text-lg text-slate-500 max-w-2xl mb-10 leading-relaxed">
-          XAI Middleware intercepts every agent action at runtime, enforces your security and compliance policies, generates decision rationale, and routes high-risk operations to human review.
-        </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          <a
-            href="#get-access"
-            className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded text-sm font-medium transition-colors inline-flex items-center gap-2"
-          >
-            Get Started <ArrowRight className="w-4 h-4" />
-          </a>
-          <a
-            href="#documentation"
-            className="border border-slate-300 hover:border-slate-400 text-slate-700 px-6 py-2.5 rounded text-sm font-medium transition-colors"
-          >
-            Integration Guide
-          </a>
+      <section className="max-w-6xl mx-auto px-6 py-16 md:py-24 flex-grow grid lg:grid-cols-12 gap-10 items-center">
+        {/* Left Column: Headline, Description & CTAs */}
+        <div className="lg:col-span-6 flex flex-col items-start text-left lg:-translate-x-[5px]">
+          <span className="inline-block border border-indigo-200 text-indigo-600 text-xs font-semibold px-3 py-1 rounded mb-5 tracking-widest uppercase bg-indigo-50/50">
+            Open Standard &middot; v1.0
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold mb-5 leading-tight tracking-tight text-slate-900">
+            Governance and explainability<br className="hidden sm:inline" /> for production AI agents
+          </h1>
+          <p className="text-base md:text-lg text-slate-600 mb-8 leading-relaxed">
+            XAI Middleware intercepts every agent action at runtime, enforces your security and compliance policies, generates decision rationale, and routes high-risk operations to human review.
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <a
+              href="#get-access"
+              className="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded text-sm font-medium transition-colors inline-flex items-center gap-2"
+            >
+              Get Started <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="#documentation"
+              className="border border-slate-300 hover:border-slate-400 text-slate-700 px-6 py-2.5 rounded text-sm font-medium transition-colors"
+            >
+              Integration Guide
+            </a>
+          </div>
+        </div>
+
+        {/* Right Column: Live Interceptor Dataflow Animation */}
+        <div className="lg:col-span-6 w-full flex justify-center lg:justify-end lg:translate-x-[5px]">
+          <PipelineAnimation />
         </div>
       </section>
 
